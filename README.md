@@ -1,7 +1,8 @@
-# meat-app
-Aplicativo de restaurante desenvolvido em Angular
+
+
 
 # MeatApp
+Aplicativo de restaurante desenvolvido em Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
 
