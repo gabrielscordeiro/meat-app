@@ -4,7 +4,9 @@ import { Http } from "@angular/http";
 import { Restaurant } from "./restaurant/restaurant.model";
 import { MEAT_API } from "../app.api";
 import { Observable } from "rxjs";
-import { map } from 'rxjs/operators'
+import { map, catchError } from 'rxjs/operators'
+
+import { ErrorHandler } from '../app.error-handler';
 
 @Injectable()
 
@@ -17,7 +19,8 @@ export class RestaurantsService {
     restaurants(): Observable<Restaurant[]> {
         return this.http.get(`${MEAT_API}/restaurants`).pipe(map(
             response => response.json()
-        ));//Mapear a resposta, substituindo pelo json que vem com a resposta)
+        ), catchError(ErrorHandler.handleError));
+        //Mapear a resposta, substituindo pelo json que vem com a resposta)
 
     }
 }
